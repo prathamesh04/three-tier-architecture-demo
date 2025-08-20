@@ -62,3 +62,26 @@ shipping: {}
 user: {}
 
 web: {}
+
+# Monitoring configuration (optional)
+# Enable Loki monitoring with TSDB as default
+monitoring:
+  enabled: false
+  loki:
+    # TSDB is the default and preferred index format
+    tsdb: true
+    enableStructuredMetadata: true
+    
+    # Grafana dashboard configuration  
+    dashboards:
+      enabled: false
+      prefix: "RobotShop Loki / "
+      tags: ["loki", "robotshop", "three-tier"]
+    
+    # Prometheus alerts
+    alerts:
+      enabled: false
+      
+    # Recording rules
+    rules:
+      enabled: false
